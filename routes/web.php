@@ -15,9 +15,9 @@ use App\Http\Middleware\TokenVerificationMiddleware;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::post('/user-registration',[UserController::class,'UserRegistration']);
