@@ -5,36 +5,25 @@
             <p class="text-muted">Sign in to continue to Bookie.</p>
         </div>
         <div class="mt-4">
-            <form action="" method="POST">
-                @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter username">
+                    <input id="email" placeholder="User Email" class="form-control" type="email"/>
                 </div>
 
                 <div class="mb-3">
                     <div class="float-end">
-                        <a href="" class="text-muted">Forgot password?</a>
+                        <a href="{{ url('/sendOtp') }}" class="text-muted">Forgot password?</a>
                     </div>
                     <label class="form-label" for="password">Password</label>
-                    <label for="password" class="form-label">Email</label>
-                    <input type="password" class="form-control" id="email" name="password" placeholder="Enter Password">
+                    <input id="password" placeholder="User Password" class="form-control" type="password"/>
                 </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
-                    <label class="form-check-label" for="auth-remember-check">Remember me</label>
-                </div>
-
                 <div class="mt-4">
-                    <button class="btn btn-success w-100" type="submit">Sign In</button>
+                    <button onclick="SubmitLogin()" class="btn btn-success w-100">Sign In</button>
                 </div>
-
-            </form>
         </div>
 
         <div class="mt-5 text-center">
-            <p class="mb-0">Don't have an account ? <a href="{{ url('/user-registration') }}" class="fw-semibold text-primary text-decoration-underline"> Signup</a> </p>
+            <p class="mb-0">Don't have an account ? <a href="{{ url('/userRegistration') }}" class="fw-semibold text-primary text-decoration-underline"> Signup</a> </p>
         </div>
     </div>
 </div>
@@ -45,7 +34,7 @@
     async function SubmitLogin() {
               let email=document.getElementById('email').value;
               let password=document.getElementById('password').value;
-  
+
               if(email.length===0){
                   errorToast("Email is required");
               }
@@ -53,9 +42,9 @@
                   errorToast("Password is required");
               }
               else{
-                  showLoader();
+                 // showLoader();
                   let res=await axios.post("/user-login",{email:email, password:password});
-                  hideLoader()
+                //  hideLoader()
                   if(res.status===200 && res.data['status']==='success'){
                       window.location.href="/dashboard";
                   }
@@ -64,5 +53,5 @@
                   }
               }
       }
-  
+
   </script>

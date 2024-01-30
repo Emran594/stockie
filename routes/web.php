@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\TokenVerificationMiddleware;
@@ -16,7 +17,7 @@ use App\Http\Middleware\TokenVerificationMiddleware;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.auth.login-page');
 });
 
 
@@ -27,3 +28,12 @@ Route::post('/verify-otp',[UserController::class,'VerifyOTP']);
 Route::post('/reset-password',[UserController::class,'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware([TokenVerificationMiddleware::class]);
+
+
+
+Route::get('/userLogin',[UserController::class,'LoginPage']);
+Route::get('/userRegistration',[UserController::class,'RegistrationPage']);
+Route::get('/sendOtp',[UserController::class,'SendOtpPage']);
+Route::get('/verifyOtp',[UserController::class,'VerifyOTPPage']);
+Route::get('/resetPassword',[UserController::class,'ResetPasswordPage']);
+Route::get('/dashboard',[DashboardController::class,'DashboardPage'])->middleware([TokenVerificationMiddleware::class]);
