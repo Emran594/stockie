@@ -1380,7 +1380,7 @@
                           ></i>
                           <span class="align-middle">Lock screen</span></a
                         >
-                        <a class="dropdown-item" href="auth-logout-basic.html"
+                        <a class="dropdown-item" href="{{ url('/Logout') }}"
                           ><i
                             class="mdi mdi-logout text-muted fs-16 align-middle me-1"
                           ></i>

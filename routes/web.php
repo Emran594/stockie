@@ -29,6 +29,8 @@ Route::post('/reset-password',[UserController::class,'ResetPassword'])->middlewa
 Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware([TokenVerificationMiddleware::class]);
 
+Route::get('/Logout',[UserController::class,'UserLogout']);
+
 
 
 Route::get('/userLogin',[UserController::class,'LoginPage']);

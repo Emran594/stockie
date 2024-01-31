@@ -1,12 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 use App\Helper\JWTToken;
-use App\Mail\OTPMail;
-use App\Models\User;
 use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OTPMail;
+
 
 class UserController extends Controller
 {
@@ -101,7 +102,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'failed',
                 'message' => 'unauthorized'
-            ]);
+            ],404);
         }
     }
 
