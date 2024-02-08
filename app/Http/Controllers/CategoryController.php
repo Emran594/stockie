@@ -8,14 +8,17 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
-    function CategoryPage(){
-        return view('pages.dashboard.category-page');
+    function CategoryPage(Request $request){
+        $user_id=$request->header('id');
+        $data =  Category::where('user_id',$user_id)->get();
+        return view('pages.dashboard.category-page',compact('data'));
     }
 
-    function CategoryList(Request $request){
-        $user_id=$request->header('id');
-        return Category::where('user_id',$user_id)->get();
-    }
+    // function CategoryList(Request $request){
+    //     $user_id=$request->header('id');
+    //     $data =  Category::where('user_id',$user_id)->get();
+    //     return view('pages.dashboard.category-page',compact($data));
+    // }
 
     function CategoryCreate(Request $request){
         $user_id=$request->header('id');
@@ -32,16 +35,17 @@ class CategoryController extends Controller
     }
 
 
-    function CategoryByID(Request $request){
-        $category_id=$request->input('id');
+    function CategoryByID(Request $request,$id){
+        $category_id= $id;
         $user_id=$request->header('id');
-        return Category::where('id',$category_id)->where('user_id',$user_id)->first();
+        $data =  Category::where('id',$category_id)->where('user_id',$user_id)->first();
+        return view("pages.dashboard.category-edit",compact('data'));
     }
 
 
 
-    function CategoryUpdate(Request $request){
-        $category_id=$request->input('id');
+    function CategoryUpdate(Request $request,$id){
+        $category_id=$id;
         $user_id=$request->header('id');
         return Category::where('id',$category_id)->where('user_id',$user_id)->update([
             'name'=>$request->input('name'),

@@ -28,20 +28,20 @@
                     <div class="navbar-brand-box horizontal-logo">
                       <a href="index.html" class="logo logo-dark">
                         <span class="logo-sm">
-                          <img src="assets/images/logo-sm.png" alt="" height="22" />
+                          <img src="{{ asset("assets/images/logo-sm.png") }}" alt="" height="22" />
                         </span>
                         <span class="logo-lg">
-                          <img src="assets/images/logo-dark.png" alt="" height="17" />
+                          <img src="{{ asset("assets/images/logo-dark.png") }}" alt="" height="17" />
                         </span>
                       </a>
 
                       <a href="index.html" class="logo logo-light">
                         <span class="logo-sm">
-                          <img src="assets/images/logo-sm.png" alt="" height="22" />
+                          <img src="{{ asset("assets/images/logo-sm.png") }}" alt="" height="22" />
                         </span>
                         <span class="logo-lg">
                           <img
-                            src="assets/images/logo-light.png"
+                            src="{{ asset("assets/images/logo-light.png") }}"
                             alt=""
                             height="17"
                           />
@@ -157,7 +157,7 @@
                             >
                               <div class="d-flex">
                                 <img
-                                  src="assets/images/users/avatar-2.jpg"
+                                  src="{{ asset("assets/images/users/avatar-2.jpg") }}"
                                   class="me-3 rounded-circle avatar-xs"
                                   alt="user-pic"
                                 />
@@ -174,7 +174,7 @@
                             >
                               <div class="d-flex">
                                 <img
-                                  src="assets/images/users/avatar-3.jpg"
+                                  src="{{ asset("assets/images/users/avatar-3.jpg") }}"
                                   class="me-3 rounded-circle avatar-xs"
                                   alt="user-pic"
                                 />
@@ -193,7 +193,7 @@
                             >
                               <div class="d-flex">
                                 <img
-                                  src="assets/images/users/avatar-5.jpg"
+                                  src="{{ asset("assets/images/users/avatar-5.jpg") }}"
                                   class="me-3 rounded-circle avatar-xs"
                                   alt="user-pic"
                                 />
@@ -263,7 +263,7 @@
                       >
                         <img
                           id="header-lang-img"
-                          src="assets/images/flags/us.svg"
+                          src="{{ asset("assets/images/flags/us.svg") }}"
                           alt="Header Language"
                           height="20"
                           class="rounded"
@@ -278,7 +278,7 @@
                           title="English"
                         >
                           <img
-                            src="assets/images/flags/us.svg"
+                            src="{{ asset("assets/images/flags/us.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -294,7 +294,7 @@
                           title="Spanish"
                         >
                           <img
-                            src="assets/images/flags/spain.svg"
+                            src="{{ asset("assets/images/flags/spain.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -310,7 +310,7 @@
                           title="German"
                         >
                           <img
-                            src="assets/images/flags/germany.svg"
+                            src="{{ asset("assets/images/flags/germany.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -326,7 +326,7 @@
                           title="Italian"
                         >
                           <img
-                            src="assets/images/flags/italy.svg"
+                            src="{{ asset("assets/images/flags/italy.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -342,7 +342,7 @@
                           title="Russian"
                         >
                           <img
-                            src="assets/images/flags/russia.svg"
+                            src="{{ asset("assets/images/flags/russia.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -358,7 +358,7 @@
                           title="Chinese"
                         >
                           <img
-                            src="assets/images/flags/china.svg"
+                            src="{{ asset("assets/images/flags/china.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -374,7 +374,7 @@
                           title="French"
                         >
                           <img
-                            src="assets/images/flags/french.svg"
+                            src="{{ asset("assets/images/flags/french.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -390,7 +390,7 @@
                           title="Arabic"
                         >
                           <img
-                            src="assets/images/flags/ae.svg"
+                            src="{{ asset("assets/images/flags/ae.svg") }}"
                             alt="user-image"
                             class="me-2 rounded"
                             height="18"
@@ -434,7 +434,7 @@
                             <div class="col">
                               <a class="dropdown-icon-item" href="#!">
                                 <img
-                                  src="assets/images/brands/github.png"
+                                  src="{{ asset("assets/images/brands/github.png") }}"
                                   alt="Github"
                                 />
                                 <span>GitHub</span>
@@ -443,7 +443,7 @@
                             <div class="col">
                               <a class="dropdown-icon-item" href="#!">
                                 <img
-                                  src="assets/images/brands/bitbucket.png"
+                                  src="{{ asset("assets/images/brands/bitbucket.png") }}"
                                   alt="bitbucket"
                                 />
                                 <span>Bitbucket</span>
@@ -452,7 +452,7 @@
                             <div class="col">
                               <a class="dropdown-icon-item" href="#!">
                                 <img
-                                  src="assets/images/brands/dribbble.png"
+                                  src="{{ asset("assets/images/brands/dribbble.png") }}"
                                   alt="dribbble"
                                 />
                                 <span>Dribbble</span>
@@ -464,7 +464,7 @@
                             <div class="col">
                               <a class="dropdown-icon-item" href="#!">
                                 <img
-                                  src="assets/images/brands/dropbox.png"
+                                  src="{{ asset("assets/images/brands/dropbox.png") }}"
                                   alt="dropbox"
                                 />
                                 <span>Dropbox</span>
@@ -473,7 +473,7 @@
                             <div class="col">
                               <a class="dropdown-icon-item" href="#!">
                                 <img
-                                  src="assets/images/brands/mail_chimp.png"
+                                  src="{{ asset("assets/images/brands/mail_chimp.png") }}"
                                   alt="mail_chimp"
                                 />
                                 <span>Mail Chimp</span>
@@ -482,7 +482,7 @@
                             <div class="col">
                               <a class="dropdown-icon-item" href="#!">
                                 <img
-                                  src="assets/images/brands/slack.png"
+                                  src="{{ asset("assets/images/brands/slack.png") }}"
                                   alt="slack"
                                 />
                                 <span>Slack</span>
@@ -549,7 +549,7 @@
                             >
                               <div class="d-flex align-items-center">
                                 <img
-                                  src="assets/images/products/img-1.png"
+                                  src="{{ asset("assets/images/products/img-1.png") }}"
                                   class="me-3 rounded-circle avatar-sm p-2 bg-light"
                                   alt="user-pic"
                                 />
@@ -586,7 +586,7 @@
                             >
                               <div class="d-flex align-items-center">
                                 <img
-                                  src="assets/images/products/img-2.png"
+                                  src="{{ asset("assets/images/products/img-2.png") }}"
                                   class="me-3 rounded-circle avatar-sm p-2 bg-light"
                                   alt="user-pic"
                                 />
@@ -623,7 +623,7 @@
                             >
                               <div class="d-flex align-items-center">
                                 <img
-                                  src="assets/images/products/img-3.png"
+                                  src="{{ asset("assets/images/products/img-3.png")}}"
                                   class="me-3 rounded-circle avatar-sm p-2 bg-light"
                                   alt="user-pic"
                                 />
@@ -661,7 +661,7 @@
                             >
                               <div class="d-flex align-items-center">
                                 <img
-                                  src="assets/images/products/img-6.png"
+                                  src="{{ asset("assets/images/products/img-6.png") }}"
                                   class="me-3 rounded-circle avatar-sm p-2 bg-light"
                                   alt="user-pic"
                                 />
@@ -698,7 +698,7 @@
                             >
                               <div class="d-flex align-items-center">
                                 <img
-                                  src="assets/images/products/img-5.png"
+                                  src="{{ asset("assets/images/products/img-5.png") }}"
                                   class="me-3 rounded-circle avatar-sm p-2 bg-light"
                                   alt="user-pic"
                                 />
@@ -920,7 +920,7 @@
                               >
                                 <div class="d-flex">
                                   <img
-                                    src="assets/images/users/avatar-2.jpg"
+                                    src="{{ asset("assets/images/users/avatar-2.jpg") }}"
                                     class="me-3 rounded-circle avatar-xs flex-shrink-0"
                                     alt="user-pic"
                                   />
@@ -1012,7 +1012,7 @@
                               >
                                 <div class="d-flex">
                                   <img
-                                    src="assets/images/users/avatar-8.jpg"
+                                    src="{{ asset("assets/images/users/avatar-8.jpg") }}"
                                     class="me-3 rounded-circle avatar-xs flex-shrink-0"
                                     alt="user-pic"
                                   />
@@ -1081,7 +1081,7 @@
                               >
                                 <div class="d-flex">
                                   <img
-                                    src="assets/images/users/avatar-3.jpg"
+                                    src="{{ asset("assets/images/users/avatar-3.jpg") }}"
                                     class="me-3 rounded-circle avatar-xs"
                                     alt="user-pic"
                                   />
@@ -1127,7 +1127,7 @@
                               >
                                 <div class="d-flex">
                                   <img
-                                    src="assets/images/users/avatar-2.jpg"
+                                    src="{{ asset("assets/images/users/avatar-2.jpg") }}"
                                     class="me-3 rounded-circle avatar-xs"
                                     alt="user-pic"
                                   />
@@ -1174,7 +1174,7 @@
                               >
                                 <div class="d-flex">
                                   <img
-                                    src="assets/images/users/avatar-6.jpg"
+                                    src="{{ asset("assets/images/users/avatar-6.jpg") }}"
                                     class="me-3 rounded-circle avatar-xs"
                                     alt="user-pic"
                                   />
@@ -1221,7 +1221,7 @@
                               >
                                 <div class="d-flex">
                                   <img
-                                    src="assets/images/users/avatar-8.jpg"
+                                    src="{{ asset("assets/images/users/avatar-8.jpg") }}"
                                     class="me-3 rounded-circle avatar-xs"
                                     alt="user-pic"
                                   />
@@ -1316,7 +1316,7 @@
                         <span class="d-flex align-items-center">
                           <img
                             class="rounded-circle header-profile-user"
-                            src="assets/images/users/avatar-1.jpg"
+                            src="{{ asset("assets/images/users/avatar-1.jpg") }}"
                             alt="Header Avatar"
                           />
                           <span class="text-start ms-xl-2">
@@ -1405,19 +1405,19 @@
               <!-- Dark Logo-->
               <a href="index.html" class="logo logo-dark">
                   <span class="logo-sm">
-                      <img src="assets/images/logo-sm.png" alt="" height="22">
+                      <img src="{{ asset("assets/images/logo-sm.png") }}" alt="" height="22">
                   </span>
                   <span class="logo-lg">
-                      <img src="assets/images/logo-dark.png" alt="" height="17">
+                      <img src="{{ asset("assets/images/logo-dark.png") }}" alt="" height="17">
                   </span>
               </a>
               <!-- Light Logo-->
               <a href="index.html" class="logo logo-light">
                   <span class="logo-sm">
-                      <img src="assets/images/logo-sm.png" alt="" height="22">
+                      <img src="{{ asset("assets/images/logo-sm.png") }}" alt="" height="22">
                   </span>
                   <span class="logo-lg">
-                      <img src="assets/images/logo-light.png" alt="" height="17">
+                      <img src="{{ asset("assets/images/logo-light.png") }}" alt="" height="17">
                   </span>
               </a>
               <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">

@@ -27,7 +27,7 @@
                                     <h5 class="card-title mb-0">Catetory List</h5>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-auto">
                                 <div class="d-flex flex-wrap align-items-start gap-2">
                                     <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="card-body border-bottom-dashed border-bottom">
                         <form>
@@ -84,18 +84,39 @@
                     <div class="card-body">
                         <div>
                             <div class="table-responsive table-card mb-1">
-                                <table class="table" id="tableData">
-                                    <thead>
-                                    <tr class="bg-light">
-                                        <th>No</th>
-                                        <th>Category</th>
-                                        <th>Action</th>
-                                    </tr>
+                                @if (isset($data))
+                                <table class="table align-middle" id="customerTable">
+                                    <thead class="table-light text-muted">
+                                        <tr>
+                                            <th class="sort" data-sort="customer_name">Id</th>
+                                            <th class="sort" data-sort="email">Category name</th>
+                                            <th class="sort" data-sort="action">Action</th>
+                                        </tr>
                                     </thead>
-                                    <tbody id="tableList">
-                    
+                                    <tbody class="list form-check-all">
+                                        @foreach ($data as $item)
+                                        <tr>
+                                            <td class="customer_name">{{ $item->id }}</td>
+                                            <td class="email">{{ $item->name }}</td>
+                                            <td>
+                                                <ul class="list-inline hstack gap-2 mb-0">
+                                                    <li class="list-inline-item edit">
+                                                        <a href="/category-by-id/{{ $item->id }}" class="text-primary d-inline-block z">
+                                                            <i class="ri-pencil-fill fs-16"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Remove">
+                                                        <a class="text-danger d-inline-block remove-item-btn" data-bs-toggle="modal" href="{{ $item->id }}">
+                                                            <i class="ri-delete-bin-5-fill fs-16"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
+                                @endif
                                 <div class="noresult" style="display: none">
                                     <div class="text-center">
                                         <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#25a0e2,secondary:#00bd9d" style="width:75px;height:75px">
@@ -155,58 +176,3 @@
     </div>
     <!-- container-fluid -->
 </div>
-
-<script>
-
-    getList();
-    
-    
-    async function getList() {
-    
-    
-       // showLoader();
-        let res=await axios.get("/list-category");
-       // hideLoader();
-    
-        let tableList=$("#tableList");
-        let tableData=$("#tableData");
-    
-        tableData.DataTable().destroy();
-        tableList.empty();
-    
-        res.data.forEach(function (item,index) {
-            let row=`<tr>
-                        <td>${index+1}</td>
-                        <td>${item['name']}</td>
-                        <td>
-                            <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
-                            <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
-                        </td>
-                     </tr>`
-            tableList.append(row)
-        })
-    
-        $('.editBtn').on('click', async function () {
-               let id= $(this).data('id');
-               await FillUpUpdateForm(id)
-               $("#update-modal").modal('show');
-    
-    
-        })
-    
-        $('.deleteBtn').on('click',function () {
-            let id= $(this).data('id');
-            $("#delete-modal").modal('show');
-            $("#deleteID").val(id);
-        })
-    
-        new DataTable('#tableData',{
-           order:[[0,'desc']],
-           lengthMenu:[5,10,15,20,30]
-       });
-    
-    }
-    
-    </script>
-
-    
