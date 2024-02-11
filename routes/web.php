@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\TokenVerificationMiddleware;
@@ -49,3 +51,11 @@ Route::get("/list-category",[CategoryController::class,'CategoryList'])->middlew
 Route::get("/delete-category/{id}",[CategoryController::class,'CategoryDelete'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/update-category/{id}",[CategoryController::class,'CategoryUpdate'])->middleware([TokenVerificationMiddleware::class]);
 
+
+Route::get('/customerPage',[CustomerController::class,'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/create-customer",[CustomerController::class,'CustomerCreate'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/customer-by-id/{id}",[CustomerController::class,'CustomeryByID'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-customer/{id}",[CustomerController::class,'CustomerUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/delete-customer/{id}",[CustomerController::class,'CustomerDelete'])->middleware([TokenVerificationMiddleware::class]);
+
+Route::get('/productPage',[ProductController::class,'ProductPage'])->middleware([TokenVerificationMiddleware::class]);

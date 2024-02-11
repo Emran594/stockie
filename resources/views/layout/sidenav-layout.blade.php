@@ -1439,7 +1439,17 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link menu-link" href="{{ url('/categoryPage') }}"aria-expanded="false">
-                              <i data-feather="home" class="icon-dual"></i> <span data-key="t-dashboards">Category</span>
+                              <i data-feather="bx bx-copy-alt" class="bx bx-copy-alt"></i> <span data-key="t-dashboards">Category</span>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link menu-link" href="{{ url('/customerPage') }}"aria-expanded="false">
+                              <i data-feather="bx bxs-group" class="bx bxs-group"></i> <span data-key="t-dashboards">Customer</span>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link menu-link" href="{{ url('/productPage') }}"aria-expanded="false">
+                              <i data-feather="bx bxs-briefcase" class="bx bxs-briefcase"></i> <span data-key="t-dashboards">Product</span>
                           </a>
                       </li>
                   </ul>
