@@ -14,12 +14,6 @@ class CategoryController extends Controller
         return view('pages.dashboard.category-page',compact('data'));
     }
 
-    // function CategoryList(Request $request){
-    //     $user_id=$request->header('id');
-    //     $data =  Category::where('user_id',$user_id)->get();
-    //     return view('pages.dashboard.category-page',compact($data));
-    // }
-
     function CategoryCreate(Request $request){
         $user_id=$request->header('id');
         return Category::create([
@@ -27,13 +21,6 @@ class CategoryController extends Controller
             'user_id'=>$user_id
         ]);
     }
-
-    function CategoryDelete(Request $request){
-        $category_id=$request->input('id');
-        $user_id=$request->header('id');
-        return Category::where('id',$category_id)->where('user_id',$user_id)->delete();
-    }
-
 
     function CategoryByID(Request $request,$id){
         $category_id= $id;
@@ -44,13 +31,30 @@ class CategoryController extends Controller
 
 
 
-    function CategoryUpdate(Request $request,$id){
-        $category_id=$id;
-        $user_id=$request->header('id');
-        $result = Category::where('id',$category_id)->where('user_id',$user_id)->update([
-            'name'=>$request->input('name'),
+    function CategoryUpdate(Request $request, $id){
+        $category_id = $id;
+        $user_id = $request->header('id');
+        $result = Category::where('id', $category_id)->where('user_id', $user_id)->update([
+            'name' => $request->input('name'),
         ]);
+    
+        if ($result) {
+            return redirect('/categoryPage')->with('success', 'Category updated successfully!');
+        } else {
+            return redirect('/categoryPage')->with('error', 'Failed to update category.');
+        }
+    }
+    
 
-        return redirect('/categoryPage');
+    function CategoryDelete(Request $request, $id){
+        $category_id = $id;
+        $user_id = $request->header('id');
+        $result =  Category::where('id', $category_id)->where('user_id', $user_id)->delete();
+    
+        if ($result) {
+            return redirect('/categoryPage')->with('success', 'Category deleted successfully!');
+        } else {
+            return redirect('/categoryPage')->with('error', 'Failed to delete category.');
+        }
     }
 }
